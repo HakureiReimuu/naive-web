@@ -1,5 +1,7 @@
 <template>
-  <div>登录</div>
+  <div class="login-container">
+    登录
+  </div>
 </template>
 
 <script>
@@ -9,5 +11,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.login-container {
+  background-color: tomato;
+}
 </style>
