@@ -1,25 +1,34 @@
 <template>
-  <div>
-  </div>
+  <div></div>
 </template>
 
 <script>
 export default {
-  name: 'Login',
+  name: 'Guide',
   data () {
     return {
-      username: '',
-      password: '',
+      active: 0,
       server: {
         name: '',
-        protocol: 0,
         url: '',
         port: 23333
       }
+    }
+  },
+  methods: {
+    next () {
+      this.active++
+    },
+    back () {
+      this.active--
+    },
+    done () {
+      //
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
+
 </style>
