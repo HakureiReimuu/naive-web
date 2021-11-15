@@ -1,31 +1,31 @@
 <template>
-  <div></div>
+    <div></div>
 </template>
 
 <script>
 export default {
-  name: 'Guide',
-  data () {
-    return {
-      active: 0,
-      server: {
-        name: '',
-        url: '',
-        port: 23333
-      }
-    }
-  },
-  methods: {
-    next () {
-      this.active++
+    name: 'Guide',
+    data () {
+        return {
+            active: 0,
+            server: {
+                name: '',
+                url: '',
+                port: 23333
+            }
+        }
     },
-    back () {
-      this.active--
-    },
-    done () {
-      //
+    methods: {
+        next () {
+            this.active++
+        },
+        back () {
+            this.active--
+        },
+        done () {
+            //
+        }
     }
-  }
 }
 </script>
 

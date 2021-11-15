@@ -1,23 +1,23 @@
 <template>
-  <div>
-  </div>
+    <div>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'Login',
-  data () {
-    return {
-      username: '',
-      password: '',
-      server: {
-        name: '',
-        protocol: 0,
-        url: '',
-        port: 23333
-      }
+    name: 'Login',
+    data () {
+        return {
+            username: '',
+            password: '',
+            server: {
+                name: '',
+                protocol: 0,
+                url: '',
+                port: 23333
+            }
+        }
     }
-  }
 }
 </script>
 

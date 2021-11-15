@@ -7,43 +7,43 @@ Vue.use(VueRouter)
 
 let index
 if (window.localStorage['naive-server'] === undefined) {
-  index = '/guide'
+    index = '/guide'
 } else {
-  index = '/login'
+    index = '/login'
 }
 
 const routes = [
-  {
-    path: '/',
-    redirect: index
-  },
-  {
-    path: '/login',
-    component: Login,
-    meta: {
-      title: '登录'
+    {
+        path: '/',
+        redirect: index
+    },
+    {
+        path: '/login',
+        component: Login,
+        meta: {
+            title: '登录'
+        }
+    },
+    {
+        path: '/guide',
+        component: Guide,
+        meta: {
+            title: '初始化'
+        }
     }
-  },
-  {
-    path: '/guide',
-    component: Guide,
-    meta: {
-      title: '初始化'
-    }
-  }
 ]
 
 const router = new VueRouter({
-  routes
+    routes
 })
 
 router.beforeEach((to, from, next) => {
-  const { title } = to.meta
-  if (title) {
-    document.title = title + ' | Naive'
-  }
+    const { title } = to.meta
+    if (title) {
+        document.title = title + ' | Naive'
+    }
 
-  next()
+    next()
 })
 
 export default router
