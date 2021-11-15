@@ -11,12 +11,24 @@ const routes = [
   },
   {
     path: '/login',
-    component: Login
+    component: Login,
+    meta: {
+      title: '登录'
+    }
   }
 ]
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const { title } = to.meta
+  if (title) {
+    document.title = title + ' | Naive'
+  }
+
+  next()
 })
 
 export default router
