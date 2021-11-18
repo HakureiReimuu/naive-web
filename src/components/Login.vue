@@ -101,15 +101,17 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'Login',
     data: () => ({
         background: require('../assets/acg.gy_04.jpg'),
         server: {
-            url: '',
-            port: '',
-            username: '',
-            password: ''
+            url: 'localhost',
+            port: '80',
+            username: '1',
+            password: '1'
         },
         ssl: false,
         password_show: false,
@@ -133,7 +135,27 @@ export default {
             this.$refs.form.reset()
         },
         login () {
-            console.log(this.$refs.form.validate())
+            if (this.$refs.form.validate()) {
+                const url = (this.ssl ? 'https://' : 'http://') + this.server.url + ':' + this.server.port + '/login'
+                const data = new URLSearchParams()
+
+                data.append('username', this.server.username)
+                data.append('password', this.server.password)
+
+                axios({
+                    method: 'POST',
+                    url: url,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data,
+                    timeout: 3000
+                }).then(val => {
+                    console.log('@', val.data)
+                }, reason => {
+                    console.log('#', reason)
+                })
+            }
         },
         go (url) {
             window.location.href = url
