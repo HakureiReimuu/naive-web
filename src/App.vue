@@ -6,9 +6,11 @@
 
 export default {
     name: 'App',
-
-    data: () => ({
-        //
-    })
+    data: () => ({}),
+    computed: {
+        thisYear () {
+            return new Date().getFullYear()
+        }
+    }
 }
 </script>
