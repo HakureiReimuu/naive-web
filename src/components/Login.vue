@@ -7,7 +7,6 @@
             <v-container>
                 <v-card class="login-box">
                     <v-card-title>连接到 Naive Violet</v-card-title>
-                    <v-card-subtitle></v-card-subtitle>
                     <v-card-text>
                         <v-form ref="form">
                             <v-row>
