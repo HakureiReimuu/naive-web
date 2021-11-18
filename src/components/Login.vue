@@ -6,18 +6,7 @@
 <script>
 export default {
     name: 'Login',
-    data () {
-        return {
-            username: '',
-            password: '',
-            server: {
-                name: '',
-                protocol: 0,
-                url: '',
-                port: 23333
-            }
-        }
-    }
+    data: () => {}
 }
 </script>
 
