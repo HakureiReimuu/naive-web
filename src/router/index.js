@@ -1,19 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '@/components/Login'
+import Login from '@/views/Login'
+import Home from '@/views/Home'
+
+import Global from '@/Global'
 
 Vue.use(VueRouter)
 
+const index = Global.isEmpty(Global.token) ? '/login' : '/home'
 const routes = [
     {
         path: '/',
-        redirect: '/login'
+        redirect: index
     },
     {
         path: '/login',
         component: Login,
         meta: {
             title: '登录'
+        }
+    },
+    {
+        path: '/home',
+        component: Home,
+        meta: {
+            title: '首页'
         }
     }
 ]
@@ -29,6 +40,15 @@ router.beforeEach((to, from, next) => {
     }
 
     next()
+
+    // if (Global.isEmpty(Global.token) && to.path !== '/' && to.path !== '/login') {
+    //     next({
+    //         path: '/',
+    //         query: { from: to.fullPath }
+    //     })
+    // } else {
+    //     next()
+    // }
 })
 
 export default router
