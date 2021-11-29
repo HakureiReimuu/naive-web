@@ -3,9 +3,7 @@ let username
 let target
 let token
 
-function isEmpty (str) {
-    return str === undefined || str === null || str === ''
-}
+const isEmpty = (str) => str === undefined || str === null || str === ''
 
 export default {
     name: 'Global',

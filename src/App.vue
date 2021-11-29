@@ -4,11 +4,6 @@
 
 <script>
 export default {
-    name: 'App',
-    computed: {
-        thisYear () {
-            return new Date().getFullYear()
-        }
-    }
+    name: 'App'
 }
 </script>

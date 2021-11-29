@@ -146,7 +146,7 @@ export default {
             if (this.$refs.form.validate()) {
                 this.status.logging = true
 
-                const url = (this.ssl ? 'https://' : 'http://') + this.server.url + ':' + this.server.port + '/login'
+                const url = `${this.ssl ? 'https://' : 'http://'}${this.server.url}:${this.server.port}/login`
                 const data = new URLSearchParams()
 
                 data.append('username', this.server.username)
